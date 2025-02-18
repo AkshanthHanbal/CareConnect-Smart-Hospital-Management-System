@@ -1,0 +1,46 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - master  # Change this to your main branch name
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: "aadish1206"
+        password: "Aadish12@"
+
+    - name: Build and Push PHP-Env image
+      run: |
+        docker build -t aadish1206/my-php-env:latest -f Dockerfile.php-env .
+        docker push aadish1206/my-php-env:latest
+
+
+    - name: Build and Push MySQL-DB image
+      run: |
+        docker build -t aadish1206/mysql_db:latest -f Dockerfile.mysql_db .
+        docker push aadish1206/mysql_db:latest
+
+    - name: Build and Push PHPMyAdmin image
+      run: |
+        docker build -t aadish1206/phpmyadmin:latest -f Dockerfile.phpmyadmin .
+        docker push aadish1206/phpmyadmin:latest
+
+    - name: Run Docker Compose
+      run: docker-compose up --build -d
+
+    - name: Wait for services to start
+      run: sleep 10  # Adjust the wait time as needed
+      
+    - name: Stop Docker Compose
+      run: docker-compose down

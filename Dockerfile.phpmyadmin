@@ -1,0 +1,11 @@
+# Use the official phpMyAdmin image as the base image
+FROM phpmyadmin/phpmyadmin
+
+# Optionally, you can customize phpMyAdmin settings here
+# For example, you can configure additional PHP settings or phpMyAdmin itself
+
+# Expose the port on which phpMyAdmin runs (usually 80)
+EXPOSE 80
+
+# Start phpMyAdmin when the container starts
+CMD ["apache2-foreground"]

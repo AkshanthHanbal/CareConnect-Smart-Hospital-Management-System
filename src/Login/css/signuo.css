@@ -1,0 +1,70 @@
+body{
+    margin: 2%;
+    height: 90vh;
+    width: 195vh;
+    background-color: #282634;
+    background-image : url("logo2.png");
+    background-size: contain ;
+    background-position-x: center;  
+    background-repeat: no-repeat;
+    column-gap: 30px;
+}
+
+.container {
+    width: 45%;
+    background-color: #302d3e;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 8px;
+    margin: 0 auto; /* Center horizontally */
+    padding: 20;
+    box-shadow: 0 3px 5px 0 rgba(240, 240, 240, 0.3);
+    animation: transitionIn-Y-over 0.5s;
+    display: flex; /* Use flexbox for vertical centering */
+    justify-content: center; /* Center horizontally within flex container */
+    align-items: center; /* Center vertically within flex container */
+    height: 80vh; /* Set the container height to 100% of the viewport height */
+}
+
+
+td{
+    text-align: center;
+
+}
+.header-text{
+    color: rgb(234, 234, 234);
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.sub-text{
+    font-size: 15px;
+    color: rgb(138, 138, 138);
+}
+
+.form-label{
+    color: rgb(234, 234, 234);
+    text-align: left;
+    font-size: 14px;
+}
+.label-td{
+    text-align: left;
+    padding-top: 10px;
+}
+
+.hover-link1{
+    font-weight: bold;
+}
+
+
+.hover-link1:hover{
+    opacity: 0.8;
+    transition: 0.5s;
+
+
+}.login-btn{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
